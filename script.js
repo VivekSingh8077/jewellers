@@ -1,29 +1,24 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
-
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const message = document.getElementById('message');
-
-    // Basic validation
-    if (email === '' || password === '') {
-        message.textContent = 'Please fill in all fields.';
-        return;
-    }
-
-    // Simulate a login process (replace this with actual authentication logic)
-    if (email === 'user@example.com' && password === 'password') {
-        message.textContent = 'Login successful!';
-        message.style.color = 'green';
-        // Redirect to a different page or perform another action
-        // window.location.href = 'dashboard.html';
-    } else {
-        message.textContent = 'Invalid email or password.';
-    }
-});
-function sahil(){
-    alert("Signed Up For Newsletters");
+function toggleForms() {
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    
+    loginForm.classList.toggle('hidden');
+    signupForm.classList.toggle('hidden');
 }
-function applied(){
-    alert("applied");
+
+function login() {
+    const username = document.getElementById('loginUsername').value;
+    const password = document.getElementById('loginPassword').value;
+
+    // Here you would typically send the data to your server
+    alert(`Login attempted with Username: ${username} and Password: ${password}`);
+}
+
+function signup() {
+    const username = document.getElementById('signupUsername').value;
+    const email = document.getElementById('signupEmail').value;
+    const password = document.getElementById('signupPassword').value;
+
+    // Here you would typically send the data to your server
+    alert(`Signup attempted with Username: ${username}, Email: ${email} and Password: ${password}`);
 }
